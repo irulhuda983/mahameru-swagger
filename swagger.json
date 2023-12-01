@@ -1,0 +1,1542 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Mahameru API Docs",
+      "description": "Dokumentasi API untuk project mahameru lantas.",
+      "contact": {},
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "{_.base_url}",
+        "variables": {
+          "_.base_url": {
+            "default": "https://api-mahameru-lantas.synergics.digital/v1"
+          }
+        }
+      },
+      {
+        "url": "{local}",
+        "variables": {
+          "local": {
+            "default": "http://localhost:8000/v1"
+          }
+        }
+      }
+    ],
+    "paths": {
+      "/options/kabkota": {
+        "get": {
+          "tags": [
+            "OPTIONS"
+          ],
+          "summary": "kabkota",
+          "description": "",
+          "operationId": "kabkota",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/options/satker": {
+        "get": {
+          "tags": [
+            "OPTIONS"
+          ],
+          "summary": "kesatuan",
+          "description": "",
+          "operationId": "kesatuan",
+          "parameters": [
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/options/pangkat": {
+        "get": {
+          "tags": [
+            "OPTIONS"
+          ],
+          "summary": "pangkat",
+          "description": "",
+          "operationId": "pangkat",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/options/jabatan": {
+        "get": {
+          "tags": [
+            "OPTIONS"
+          ],
+          "summary": "jabatan",
+          "description": "",
+          "operationId": "jabatan",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/blackspot": {
+        "get": {
+          "tags": [
+            "LOKASI RAWAN"
+          ],
+          "summary": "blackspot",
+          "description": "",
+          "operationId": "blackspot",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/troublespot": {
+        "get": {
+          "tags": [
+            "LOKASI RAWAN"
+          ],
+          "summary": "troublespot",
+          "description": "",
+          "operationId": "troublespot",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/satker/list-satker-polda": {
+        "get": {
+          "tags": [
+            "SATKER"
+          ],
+          "summary": "list satker polda",
+          "description": "",
+          "operationId": "listsatkerpolda",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/satker/list-subsatker-polda": {
+        "get": {
+          "tags": [
+            "SATKER"
+          ],
+          "summary": "list subsatker polda",
+          "description": "",
+          "operationId": "listsubsatkerpolda",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "kode",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "21609"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/satker/list-polres": {
+        "get": {
+          "tags": [
+            "SATKER"
+          ],
+          "summary": "list polres",
+          "description": "",
+          "operationId": "listpolres",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/satker/list-satker-polres": {
+        "get": {
+          "tags": [
+            "SATKER"
+          ],
+          "summary": "list satker polres",
+          "description": "",
+          "operationId": "listsatkerpolres",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "kode",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "21618"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/satker/list-polsek": {
+        "get": {
+          "tags": [
+            "SATKER"
+          ],
+          "summary": "list polsek",
+          "description": "",
+          "operationId": "listpolsek",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "kode",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "21618"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "2"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/cctv": {
+        "get": {
+          "tags": [
+            "CCTV"
+          ],
+          "summary": "list all",
+          "description": "",
+          "operationId": "listall",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "idKabkota",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "3512"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": [
+            "CCTV"
+          ],
+          "summary": "store",
+          "description": "",
+          "operationId": "store",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "nama",
+                    "url",
+                    "lat",
+                    "lng",
+                    "idKabkota"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "nama": {
+                      "type": "string",
+                      "example": "coba cctv"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "http://coba.com"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.923823"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.89123"
+                    },
+                    "idKabkota": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/cctv/1/detail": {
+        "get": {
+          "tags": [
+            "CCTV"
+          ],
+          "summary": "detail",
+          "description": "",
+          "operationId": "detail",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/cctv/60/update": {
+        "post": {
+          "tags": [
+            "CCTV"
+          ],
+          "summary": "update",
+          "description": "",
+          "operationId": "update",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "nama",
+                    "url",
+                    "lat",
+                    "lng",
+                    "idKabkota"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "nama": {
+                      "type": "string",
+                      "example": "Merr Dharmahusada Utara"
+                    },
+                    "url": {
+                      "type": "string",
+                      "example": "rtsp://edishub:g412uda5u12y426@36.66.208.99:554/Streaming/Channels/702"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.265876715292572"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "112.76087167078653"
+                    },
+                    "idKabkota": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/cctv/94/toogle-status": {
+        "post": {
+          "tags": [
+            "CCTV"
+          ],
+          "summary": "toogle status",
+          "description": "",
+          "operationId": "tooglestatus",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/cctv/94/delete": {
+        "delete": {
+          "tags": [
+            "CCTV"
+          ],
+          "summary": "delete",
+          "description": "",
+          "operationId": "delete",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan": {
+        "get": {
+          "tags": [
+            "KENDARAAN"
+          ],
+          "summary": "list all",
+          "description": "",
+          "operationId": "Getlistall",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/account/issue-token": {
+        "post": {
+          "tags": [
+            "AUTH"
+          ],
+          "summary": "issue token",
+          "description": "",
+          "operationId": "issuetoken",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "username",
+                    "password",
+                    "grant_type",
+                    "client_id",
+                    "client_secret"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "example": "sudo"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "Synergics 2023"
+                    },
+                    "grant_type": {
+                      "type": "string",
+                      "example": "password"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "2"
+                    },
+                    "client_secret": {
+                      "type": "string",
+                      "example": "QGsdGvyvlrwGdjKPADR69oAbrpWXXCLvgpQ8JCcY"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": []
+        }
+      },
+      "/account/refresh-token": {
+        "post": {
+          "tags": [
+            "AUTH"
+          ],
+          "summary": "refresh token",
+          "description": "",
+          "operationId": "refreshtoken",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "grant_type",
+                    "client_id",
+                    "client_secret",
+                    "refresh_token"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "grant_type": {
+                      "type": "string",
+                      "example": "refresh_token"
+                    },
+                    "client_id": {
+                      "type": "string",
+                      "example": "2"
+                    },
+                    "client_secret": {
+                      "type": "string",
+                      "example": "{{ _.client_secret }}"
+                    },
+                    "refresh_token": {
+                      "type": "string",
+                      "example": "{{ _.refresh_token }}"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": []
+        }
+      },
+      "/account": {
+        "get": {
+          "tags": [
+            "AUTH"
+          ],
+          "summary": "profil",
+          "description": "",
+          "operationId": "profil",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/account/revoke-token": {
+        "post": {
+          "tags": [
+            "AUTH"
+          ],
+          "summary": "logout",
+          "description": "",
+          "operationId": "logout",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "bearer": {
+          "type": "http",
+          "scheme": "bearer"
+        }
+      }
+    },
+    "security": [],
+    "tags": [
+        {
+            "name": "AUTH",
+            "description": ""
+        },
+        {
+            "name": "OPTIONS",
+            "description": ""
+        },
+        {
+            "name": "LOKASI RAWAN",
+            "description": ""
+        },
+        {
+            "name": "SATKER",
+            "description": ""
+        },
+        {
+            "name": "CCTV",
+            "description": ""
+        },
+        {
+            "name": "KENDARAAN",
+            "description": ""
+        }
+    ]
+  }
