@@ -33,7 +33,19 @@
           "summary": "kabkota",
           "description": "",
           "operationId": "kabkota",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
           "responses": {
             "200": {
               "description": "",
@@ -62,6 +74,17 @@
           "description": "",
           "operationId": "kesatuan",
           "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
             {
               "name": "search",
               "in": "query",
@@ -195,10 +218,72 @@
           ]
         }
       },
+      "/troublespot": {
+        "get": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "troublespot",
+          "description": "",
+          "operationId": "troublespot",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
       "/blackspot": {
         "get": {
           "tags": [
-            "LOKASI RAWAN"
+            "LOKASI MAP"
           ],
           "summary": "blackspot",
           "description": "",
@@ -257,14 +342,14 @@
           ]
         }
       },
-      "/troublespot": {
+      "/poslantas": {
         "get": {
           "tags": [
-            "LOKASI RAWAN"
+            "LOKASI MAP"
           ],
-          "summary": "troublespot",
+          "summary": "poslantas",
           "description": "",
-          "operationId": "troublespot",
+          "operationId": "poslantas",
           "parameters": [
             {
               "name": "User-Agent",
@@ -276,27 +361,85 @@
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
               }
-            },
-            {
-              "name": "search",
-              "in": "query",
+            }
+          ],
+          "responses": {
+            "200": {
               "description": "",
-              "required": false,
-              "style": "form",
-              "explode": true,
-              "schema": {
-                "type": "string"
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
               }
-            },
+            }
+          },
+          "deprecated": false,
+          "security": [
             {
-              "name": "limit",
-              "in": "query",
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/pospjr": {
+        "get": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "pospjr",
+          "description": "",
+          "operationId": "pospjr",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
               "description": "",
               "required": false,
-              "style": "form",
-              "explode": true,
+              "style": "simple",
               "schema": {
-                "type": "string"
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/etle": {
+        "get": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "etle",
+          "description": "",
+          "operationId": "etle",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
               }
             }
           ],
@@ -560,7 +703,8 @@
               "style": "form",
               "explode": true,
               "schema": {
-                "type": "string"
+                "type": "string",
+                "example": "50"
               }
             }
           ],
@@ -1252,6 +1396,361 @@
               "bearer": []
             }
           ]
+        },
+        "post": {
+          "tags": [
+            "KENDARAAN"
+          ],
+          "summary": "store",
+          "description": "",
+          "operationId": "Poststore",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan/1/detail": {
+        "get": {
+          "tags": [
+            "KENDARAAN"
+          ],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan/60/update": {
+        "post": {
+          "tags": [
+            "KENDARAAN"
+          ],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan/94/delete": {
+        "delete": {
+          "tags": [
+            "KENDARAAN"
+          ],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/lokasi-rawan": {
+        "get": {
+          "tags": [
+            "LOKASI RAWAN"
+          ],
+          "summary": "list all",
+          "description": "",
+          "operationId": "Getlistall1",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/lokasi-rawan/30/detail": {
+        "get": {
+          "tags": [
+            "LOKASI RAWAN"
+          ],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail1",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/lokasi-rawan/30/delete": {
+        "delete": {
+          "tags": [
+            "LOKASI RAWAN"
+          ],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete1",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
         }
       },
       "/account/issue-token": {
@@ -1514,29 +2013,33 @@
     },
     "security": [],
     "tags": [
-        {
-            "name": "AUTH",
-            "description": ""
-        },
-        {
-            "name": "OPTIONS",
-            "description": ""
-        },
-        {
-            "name": "LOKASI RAWAN",
-            "description": ""
-        },
-        {
-            "name": "SATKER",
-            "description": ""
-        },
-        {
-            "name": "CCTV",
-            "description": ""
-        },
-        {
-            "name": "KENDARAAN",
-            "description": ""
-        }
+      {
+        "name": "AUTH",
+        "description": ""
+      },
+      {
+        "name": "OPTIONS",
+        "description": ""
+      },
+      {
+        "name": "LOKASI MAP",
+        "description": ""
+      },
+      {
+        "name": "SATKER",
+        "description": ""
+      },
+      {
+        "name": "CCTV",
+        "description": ""
+      },
+      {
+        "name": "KENDARAAN",
+        "description": ""
+      },
+      {
+        "name": "LOKASI RAWAN",
+        "description": ""
+      }
     ]
   }
