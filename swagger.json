@@ -73,11 +73,11 @@
                   "properties": {
                     "username": {
                       "type": "string",
-                      "example": "sudo"
+                      "example": ""
                     },
                     "password": {
                       "type": "string",
-                      "example": "Synergics 2023"
+                      "example": ""
                     },
                     "grant_type": {
                       "type": "string",
@@ -89,7 +89,7 @@
                     },
                     "client_secret": {
                       "type": "string",
-                      "example": "{{ _.client_secret }}"
+                      "example": ""
                     }
                   }
                 }
@@ -255,403 +255,6 @@
               }
             }
           ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/admin/titik-gatur": {
-        "get": {
-          "tags": [
-            "TITIK GATUR"
-          ],
-          "summary": "titik-gatur",
-          "description": "",
-          "operationId": "titik-gatur",
-          "parameters": [
-            {
-              "name": "Accept",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "application/json"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/admin/personil": {
-        "get": {
-          "tags": [
-            "PERSONIL"
-          ],
-          "summary": "list all",
-          "description": "",
-          "operationId": "listall",
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "Accept",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "application/json"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        },
-        "post": {
-          "tags": [
-            "PERSONIL"
-          ],
-          "summary": "store",
-          "description": "",
-          "operationId": "store",
-          "parameters": [
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "multipart/form-data"
-              }
-            },
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "Accept",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "application/json"
-              }
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/x-www-form-urlencoded": {
-                "encoding": {},
-                "schema": {
-                  "required": [
-                    "username",
-                    "password",
-                    "idSatker",
-                    "idPangkat",
-                    "idJabatan",
-                    "nrp",
-                    "nama",
-                    "gender",
-                    "alamat",
-                    "phone",
-                    "foto"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "username": {
-                      "type": "string",
-                      "example": "12345678"
-                    },
-                    "password": {
-                      "type": "string",
-                      "example": "12345678"
-                    },
-                    "idSatker": {
-                      "type": "string",
-                      "example": "21609"
-                    },
-                    "idPangkat": {
-                      "type": "string",
-                      "example": "1"
-                    },
-                    "idJabatan": {
-                      "type": "string"
-                    },
-                    "nrp": {
-                      "type": "string",
-                      "example": "12345678"
-                    },
-                    "nama": {
-                      "type": "string",
-                      "example": "Personil Test"
-                    },
-                    "gender": {
-                      "type": "string",
-                      "example": "L"
-                    },
-                    "alamat": {
-                      "type": "string"
-                    },
-                    "phone": {
-                      "type": "string"
-                    },
-                    "foto": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "required": false
-          },
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/admin/personil/1/detail": {
-        "get": {
-          "tags": [
-            "PERSONIL"
-          ],
-          "summary": "detail",
-          "description": "",
-          "operationId": "detail",
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "Accept",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "application/json"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/admin/personil/1/update": {
-        "post": {
-          "tags": [
-            "PERSONIL"
-          ],
-          "summary": "update",
-          "description": "",
-          "operationId": "update",
-          "parameters": [
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "multipart/form-data"
-              }
-            },
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "Accept",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "application/json"
-              }
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/x-www-form-urlencoded": {
-                "encoding": {},
-                "schema": {
-                  "required": [
-                    "username",
-                    "password",
-                    "idSatker",
-                    "idPangkat",
-                    "idJabatan",
-                    "nrp",
-                    "nama",
-                    "gender",
-                    "alamat",
-                    "phone",
-                    "foto"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "username": {
-                      "type": "string",
-                      "example": "69889104"
-                    },
-                    "password": {
-                      "type": "string",
-                      "example": "Lalisandi12"
-                    },
-                    "idSatker": {
-                      "type": "string",
-                      "example": "21609"
-                    },
-                    "idPangkat": {
-                      "type": "string",
-                      "example": "1"
-                    },
-                    "idJabatan": {
-                      "type": "string",
-                      "example": "44"
-                    },
-                    "nrp": {
-                      "type": "string",
-                      "example": "68889104"
-                    },
-                    "nama": {
-                      "type": "string",
-                      "example": "Personil 1"
-                    },
-                    "gender": {
-                      "type": "string",
-                      "example": "L"
-                    },
-                    "alamat": {
-                      "type": "string"
-                    },
-                    "phone": {
-                      "type": "string"
-                    },
-                    "foto": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "required": false
-          },
           "responses": {
             "200": {
               "description": "",
@@ -1262,6 +865,210 @@
           ]
         }
       },
+      "/cctv-korlantas": {
+        "get": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "cctv korlantas",
+          "description": "",
+          "operationId": "cctvkorlantas",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan-pjr": {
+        "get": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "kendaraan pjr",
+          "description": "",
+          "operationId": "kendaraanpjr",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan-pjr/862798051617971/show": {
+        "get": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "detail kendaraan pjr",
+          "description": "",
+          "operationId": "detailkendaraanpjr",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan-pjr/862798051617971/connect-cam": {
+        "post": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "connect cam",
+          "description": "",
+          "operationId": "connectcam",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
       "/satker/list-satker-polda": {
         "get": {
           "tags": [
@@ -1482,7 +1289,8 @@
               "style": "form",
               "explode": true,
               "schema": {
-                "type": "string"
+                "type": "string",
+                "example": "banyuwangi"
               }
             },
             {
@@ -1728,7 +1536,7 @@
           ],
           "summary": "list all",
           "description": "",
-          "operationId": "Getlistall",
+          "operationId": "listall",
           "parameters": [
             {
               "name": "User-Agent",
@@ -1782,8 +1590,7 @@
               "style": "form",
               "explode": true,
               "schema": {
-                "type": "string",
-                "example": "3512"
+                "type": "string"
               }
             }
           ],
@@ -1811,7 +1618,7 @@
           ],
           "summary": "store",
           "description": "",
-          "operationId": "Poststore",
+          "operationId": "store",
           "parameters": [
             {
               "name": "Content-Type",
@@ -1901,7 +1708,7 @@
           ],
           "summary": "detail",
           "description": "",
-          "operationId": "Getdetail",
+          "operationId": "detail",
           "parameters": [
             {
               "name": "User-Agent",
@@ -1941,7 +1748,7 @@
           ],
           "summary": "update",
           "description": "",
-          "operationId": "Postupdate",
+          "operationId": "update",
           "parameters": [
             {
               "name": "Content-Type",
@@ -2133,7 +1940,7 @@
           ],
           "summary": "list all",
           "description": "",
-          "operationId": "Getlistall1",
+          "operationId": "Getlistall",
           "parameters": [
             {
               "name": "User-Agent",
@@ -2204,7 +2011,7 @@
           ],
           "summary": "store",
           "description": "",
-          "operationId": "Poststore1",
+          "operationId": "Poststore",
           "parameters": [
             {
               "name": "Content-Type",
@@ -2255,7 +2062,7 @@
           ],
           "summary": "detail",
           "description": "",
-          "operationId": "Getdetail1",
+          "operationId": "Getdetail",
           "parameters": [
             {
               "name": "User-Agent",
@@ -2295,7 +2102,7 @@
           ],
           "summary": "update",
           "description": "",
-          "operationId": "Postupdate1",
+          "operationId": "Postupdate",
           "parameters": [
             {
               "name": "Content-Type",
@@ -2397,7 +2204,7 @@
           ],
           "summary": "list all",
           "description": "",
-          "operationId": "Getlistall2",
+          "operationId": "Getlistall1",
           "parameters": [
             {
               "name": "User-Agent",
@@ -2470,7 +2277,7 @@
           ],
           "summary": "detail",
           "description": "",
-          "operationId": "Getdetail2",
+          "operationId": "Getdetail1",
           "parameters": [
             {
               "name": "User-Agent",
@@ -2570,14 +2377,6 @@
         "description": ""
       },
       {
-        "name": "TITIK GATUR",
-        "description": ""
-      },
-      {
-        "name": "PERSONIL",
-        "description": ""
-      },
-      {
         "name": "OPTIONS",
         "description": ""
       },
@@ -2599,10 +2398,6 @@
       },
       {
         "name": "LOKASI RAWAN",
-        "description": ""
-      },
-      {
-        "name": "ADMIN",
         "description": ""
       }
     ]
