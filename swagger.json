@@ -1109,6 +1109,57 @@
           ]
         }
       },
+      "/kendaraan-pjr/862798051617971/disconnect-cam": {
+        "post": {
+          "tags": [
+            "LOKASI MAP"
+          ],
+          "summary": "connect cam",
+          "description": "",
+          "operationId": "connectcam",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
       "/satker/list-satker-polda": {
         "get": {
           "tags": [
