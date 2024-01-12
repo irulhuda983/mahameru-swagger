@@ -27,9 +27,7 @@
     "paths": {
       "/account/issue-token": {
         "post": {
-          "tags": [
-            "AUTH"
-          ],
+          "tags": ["AUTH"],
           "summary": "issue token",
           "description": "",
           "operationId": "issuetoken",
@@ -81,11 +79,11 @@
                     },
                     "grant_type": {
                       "type": "string",
-                      "example": "password"
+                      "example": ""
                     },
                     "client_id": {
                       "type": "string",
-                      "example": "2"
+                      "example": ""
                     },
                     "client_secret": {
                       "type": "string",
@@ -114,9 +112,7 @@
       },
       "/account/refresh-token": {
         "post": {
-          "tags": [
-            "AUTH"
-          ],
+          "tags": ["AUTH"],
           "summary": "refresh token",
           "description": "",
           "operationId": "refreshtoken",
@@ -163,15 +159,15 @@
                     },
                     "client_id": {
                       "type": "string",
-                      "example": "2"
+                      "example": ""
                     },
                     "client_secret": {
                       "type": "string",
-                      "example": "{{ _.client_secret }}"
+                      "example": ""
                     },
                     "refresh_token": {
                       "type": "string",
-                      "example": "{{ _.refresh_token }}"
+                      "example": ""
                     }
                   }
                 }
@@ -196,9 +192,7 @@
       },
       "/account": {
         "get": {
-          "tags": [
-            "AUTH"
-          ],
+          "tags": ["AUTH"],
           "summary": "profil",
           "description": "",
           "operationId": "profil",
@@ -236,9 +230,7 @@
       },
       "/account/revoke-token": {
         "post": {
-          "tags": [
-            "AUTH"
-          ],
+          "tags": ["AUTH"],
           "summary": "logout",
           "description": "",
           "operationId": "logout",
@@ -276,9 +268,7 @@
       },
       "/options/kabkota": {
         "get": {
-          "tags": [
-            "OPTIONS"
-          ],
+          "tags": ["OPTIONS"],
           "summary": "kabkota",
           "description": "",
           "operationId": "kabkota",
@@ -314,11 +304,47 @@
           ]
         }
       },
+      "/options/jenis-kendaraan": {
+        "get": {
+          "tags": ["OPTIONS"],
+          "summary": "jenis kendaraan",
+          "description": "",
+          "operationId": "jeniskendaraan",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
       "/options/satker": {
         "get": {
-          "tags": [
-            "OPTIONS"
-          ],
+          "tags": ["OPTIONS"],
           "summary": "kesatuan",
           "description": "",
           "operationId": "kesatuan",
@@ -367,9 +393,7 @@
       },
       "/options/pangkat": {
         "get": {
-          "tags": [
-            "OPTIONS"
-          ],
+          "tags": ["OPTIONS"],
           "summary": "pangkat",
           "description": "",
           "operationId": "pangkat",
@@ -418,9 +442,7 @@
       },
       "/options/jabatan": {
         "get": {
-          "tags": [
-            "OPTIONS"
-          ],
+          "tags": ["OPTIONS"],
           "summary": "jabatan",
           "description": "",
           "operationId": "jabatan",
@@ -469,9 +491,7 @@
       },
       "/troublespot": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "troublespot",
           "description": "",
           "operationId": "troublespot",
@@ -531,9 +551,7 @@
       },
       "/blackspot": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "blackspot",
           "description": "",
           "operationId": "blackspot",
@@ -593,9 +611,7 @@
       },
       "/poslantas": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "poslantas",
           "description": "",
           "operationId": "poslantas",
@@ -633,9 +649,7 @@
       },
       "/pospjr": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "pospjr",
           "description": "",
           "operationId": "pospjr",
@@ -671,11 +685,129 @@
           ]
         }
       },
+      "/cctv": {
+        "get": {
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "cctv",
+          "description": "",
+          "operationId": "cctv",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "idKabkota",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/cctv/1/detail": {
+        "get": {
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "detail cctv",
+          "description": "",
+          "operationId": "detailcctv",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
       "/etle": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "etle",
           "description": "",
           "operationId": "etle",
@@ -713,9 +845,7 @@
       },
       "/gatur": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "gatur",
           "description": "",
           "operationId": "gatur",
@@ -729,17 +859,6 @@
               "schema": {
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "tanggal",
-              "in": "query",
-              "description": "",
-              "required": false,
-              "style": "form",
-              "explode": true,
-              "schema": {
-                "type": "string"
               }
             }
           ],
@@ -764,9 +883,7 @@
       },
       "/gatur/lokasi-personil": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "titik personil gatur",
           "description": "",
           "operationId": "titikpersonilgatur",
@@ -816,12 +933,10 @@
       },
       "/lokasi-personil": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
-          "summary": "lokasi-personil",
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "lokasi personil",
           "description": "",
-          "operationId": "lokasi-personil",
+          "operationId": "lokasipersonil",
           "parameters": [
             {
               "name": "User-Agent",
@@ -832,6 +947,17 @@
               "schema": {
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "tanggal",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
               }
             }
           ],
@@ -856,9 +982,7 @@
       },
       "/kegiatan": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "kegiatan",
           "description": "",
           "operationId": "kegiatan",
@@ -907,9 +1031,7 @@
       },
       "/cctv-korlantas": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "cctv korlantas",
           "description": "",
           "operationId": "cctvkorlantas",
@@ -956,11 +1078,283 @@
           ]
         }
       },
+      "/satker/list-polres": {
+        "get": {
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "list polres",
+          "description": "",
+          "operationId": "listpolres",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "50"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/satker/list-satker-polda": {
+        "get": {
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "list satker polda",
+          "description": "",
+          "operationId": "listsatkerpolda",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan": {
+        "get": {
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "kendaraan",
+          "description": "",
+          "operationId": "kendaraan",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan/1/detail": {
+        "get": {
+          "tags": ["LOKASI MAP (MONIT)"],
+          "summary": "detail kendaraan",
+          "description": "",
+          "operationId": "detailkendaraan",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
       "/kendaraan-pjr": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "kendaraan pjr",
           "description": "",
           "operationId": "kendaraanpjr",
@@ -1009,9 +1403,7 @@
       },
       "/kendaraan-pjr/862798051617971/show": {
         "get": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "detail kendaraan pjr",
           "description": "",
           "operationId": "detailkendaraanpjr",
@@ -1060,9 +1452,7 @@
       },
       "/kendaraan-pjr/862798051617971/connect-cam": {
         "post": {
-          "tags": [
-            "LOKASI MAP"
-          ],
+          "tags": ["LOKASI MAP (MONIT)"],
           "summary": "connect cam",
           "description": "",
           "operationId": "connectcam",
@@ -1109,65 +1499,12 @@
           ]
         }
       },
-      "/kendaraan-pjr/862798051617971/disconnect-cam": {
-        "post": {
-          "tags": [
-            "LOKASI MAP"
-          ],
-          "summary": "connect cam",
-          "description": "",
-          "operationId": "connectcam",
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "Accept",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "application/json"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/satker/list-satker-polda": {
+      "/admin/satker/list-satker-polda": {
         "get": {
-          "tags": [
-            "SATKER"
-          ],
+          "tags": ["SATKER (ADMIN)"],
           "summary": "list satker polda",
           "description": "",
-          "operationId": "listsatkerpolda",
+          "operationId": "Getlistsatkerpolda",
           "parameters": [
             {
               "name": "User-Agent",
@@ -1199,8 +1536,7 @@
               "style": "form",
               "explode": true,
               "schema": {
-                "type": "string",
-                "example": "DITLANTAS"
+                "type": "string"
               }
             },
             {
@@ -1245,11 +1581,9 @@
           ]
         }
       },
-      "/satker/list-subsatker-polda": {
+      "/admin/satker/list-subsatker-polda": {
         "get": {
-          "tags": [
-            "SATKER"
-          ],
+          "tags": ["SATKER (ADMIN)"],
           "summary": "list subsatker polda",
           "description": "",
           "operationId": "listsubsatkerpolda",
@@ -1341,14 +1675,12 @@
           ]
         }
       },
-      "/satker/list-polres": {
+      "/admin/satker/list-polres": {
         "get": {
-          "tags": [
-            "SATKER"
-          ],
+          "tags": ["SATKER (ADMIN)"],
           "summary": "list polres",
           "description": "",
-          "operationId": "listpolres",
+          "operationId": "Getlistpolres",
           "parameters": [
             {
               "name": "User-Agent",
@@ -1380,8 +1712,7 @@
               "style": "form",
               "explode": true,
               "schema": {
-                "type": "string",
-                "example": "banyuwangi"
+                "type": "string"
               }
             },
             {
@@ -1427,11 +1758,9 @@
           ]
         }
       },
-      "/satker/list-satker-polres": {
+      "/admin/satker/list-satker-polres": {
         "get": {
-          "tags": [
-            "SATKER"
-          ],
+          "tags": ["SATKER (ADMIN)"],
           "summary": "list satker polres",
           "description": "",
           "operationId": "listsatkerpolres",
@@ -1523,11 +1852,9 @@
           ]
         }
       },
-      "/satker/list-polsek": {
+      "/admin/satker/list-polsek": {
         "get": {
-          "tags": [
-            "SATKER"
-          ],
+          "tags": ["SATKER (ADMIN)"],
           "summary": "list polsek",
           "description": "",
           "operationId": "listpolsek",
@@ -1620,14 +1947,363 @@
           ]
         }
       },
-      "/cctv": {
+      "/admin/personil": {
         "get": {
-          "tags": [
-            "CCTV"
-          ],
+          "tags": ["PERSONIL (ADMIN)"],
           "summary": "list all",
           "description": "",
           "operationId": "listall",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": ["PERSONIL (ADMIN)"],
+          "summary": "store",
+          "description": "",
+          "operationId": "store",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "username",
+                    "password",
+                    "idSatker",
+                    "idPangkat",
+                    "idJabatan",
+                    "nrp",
+                    "nama",
+                    "gender",
+                    "alamat",
+                    "phone",
+                    "foto"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "example": "11223344"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "11223344"
+                    },
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21609"
+                    },
+                    "idPangkat": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "idJabatan": {
+                      "type": "string"
+                    },
+                    "nrp": {
+                      "type": "string",
+                      "example": "11223344"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "Niztiar Dwi kusuma"
+                    },
+                    "gender": {
+                      "type": "string",
+                      "example": "P"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "Ds. Dander"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": "082000111222"
+                    },
+                    "foto": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/personil/1/detail": {
+        "get": {
+          "tags": ["PERSONIL (ADMIN)"],
+          "summary": "detail",
+          "description": "",
+          "operationId": "detail",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/personil/1/update": {
+        "post": {
+          "tags": ["PERSONIL (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "update",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "username",
+                    "password",
+                    "idSatker",
+                    "idPangkat",
+                    "idJabatan",
+                    "nrp",
+                    "nama",
+                    "gender",
+                    "alamat",
+                    "phone",
+                    "foto"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "example": "69889104"
+                    },
+                    "password": {
+                      "type": "string",
+                      "example": "Lalisandi12"
+                    },
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21609"
+                    },
+                    "idPangkat": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "idJabatan": {
+                      "type": "string",
+                      "example": "44"
+                    },
+                    "nrp": {
+                      "type": "string",
+                      "example": "68889104"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "Personil 1"
+                    },
+                    "gender": {
+                      "type": "string",
+                      "example": "L"
+                    },
+                    "alamat": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    },
+                    "foto": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/cctv": {
+        "get": {
+          "tags": ["CCTV (ADMIN)"],
+          "summary": "list",
+          "description": "",
+          "operationId": "list",
           "parameters": [
             {
               "name": "User-Agent",
@@ -1659,7 +2335,8 @@
               "style": "form",
               "explode": true,
               "schema": {
-                "type": "string"
+                "type": "string",
+                "example": "10"
               }
             },
             {
@@ -1704,12 +2381,10 @@
           ]
         },
         "post": {
-          "tags": [
-            "CCTV"
-          ],
+          "tags": ["CCTV (ADMIN)"],
           "summary": "store",
           "description": "",
-          "operationId": "store",
+          "operationId": "Poststore",
           "parameters": [
             {
               "name": "Content-Type",
@@ -1732,6 +2407,17 @@
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
               }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
             }
           ],
           "requestBody": {
@@ -1739,13 +2425,7 @@
               "application/x-www-form-urlencoded": {
                 "encoding": {},
                 "schema": {
-                  "required": [
-                    "nama",
-                    "url",
-                    "lat",
-                    "lng",
-                    "idKabkota"
-                  ],
+                  "required": ["nama", "url", "lat", "lng", "idKabkota"],
                   "type": "object",
                   "properties": {
                     "nama": {
@@ -1765,7 +2445,8 @@
                       "example": "111.89123"
                     },
                     "idKabkota": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "3526"
                     }
                   }
                 }
@@ -1792,14 +2473,12 @@
           ]
         }
       },
-      "/cctv/1/detail": {
+      "/admin/cctv/1/detail": {
         "get": {
-          "tags": [
-            "CCTV"
-          ],
+          "tags": ["CCTV (ADMIN)"],
           "summary": "detail",
           "description": "",
-          "operationId": "detail",
+          "operationId": "Getdetail",
           "parameters": [
             {
               "name": "User-Agent",
@@ -1832,14 +2511,12 @@
           ]
         }
       },
-      "/cctv/60/update": {
+      "/admin/cctv/60/update": {
         "post": {
-          "tags": [
-            "CCTV"
-          ],
+          "tags": ["CCTV (ADMIN)"],
           "summary": "update",
           "description": "",
-          "operationId": "update",
+          "operationId": "Postupdate",
           "parameters": [
             {
               "name": "Content-Type",
@@ -1862,6 +2539,17 @@
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
               }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
             }
           ],
           "requestBody": {
@@ -1869,13 +2557,7 @@
               "application/x-www-form-urlencoded": {
                 "encoding": {},
                 "schema": {
-                  "required": [
-                    "nama",
-                    "url",
-                    "lat",
-                    "lng",
-                    "idKabkota"
-                  ],
+                  "required": ["nama", "url", "lat", "lng", "idKabkota"],
                   "type": "object",
                   "properties": {
                     "nama": {
@@ -1895,7 +2577,8 @@
                       "example": "112.76087167078653"
                     },
                     "idKabkota": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "3526"
                     }
                   }
                 }
@@ -1924,24 +2607,11 @@
       },
       "/cctv/94/toogle-status": {
         "post": {
-          "tags": [
-            "CCTV"
-          ],
+          "tags": ["CCTV (ADMIN)"],
           "summary": "toogle status",
           "description": "",
           "operationId": "tooglestatus",
           "parameters": [
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "multipart/form-data"
-              }
-            },
             {
               "name": "User-Agent",
               "in": "header",
@@ -1975,9 +2645,7 @@
       },
       "/cctv/94/delete": {
         "delete": {
-          "tags": [
-            "CCTV"
-          ],
+          "tags": ["CCTV (ADMIN)"],
           "summary": "delete",
           "description": "",
           "operationId": "delete",
@@ -2024,11 +2692,1052 @@
           ]
         }
       },
-      "/kendaraan": {
+      "/admin/etle": {
         "get": {
-          "tags": [
-            "KENDARAAN"
+          "tags": ["ETLE (ADMIN)"],
+          "summary": "list",
+          "description": "",
+          "operationId": "Getlist",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "10"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "idKabkota",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
           ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": ["ETLE (ADMIN)"],
+          "summary": "store",
+          "description": "",
+          "operationId": "Poststore1",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": ["nama", "lat", "lng", "idKabkota", "alamat"],
+                  "type": "object",
+                  "properties": {
+                    "nama": {
+                      "type": "string",
+                      "example": "coba etle"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.923823"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.89123"
+                    },
+                    "idKabkota": {
+                      "type": "string",
+                      "example": "3526"
+                    },
+                    "alamat": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/etle/1/detail": {
+        "get": {
+          "tags": ["ETLE (ADMIN)"],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail1",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/etle/56/update": {
+        "post": {
+          "tags": ["ETLE (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate1",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": ["nama", "lat", "lng", "idKabkota", "alamat"],
+                  "type": "object",
+                  "properties": {
+                    "nama": {
+                      "type": "string",
+                      "example": "Etle coba update"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.265876715292572"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "112.76087167078653"
+                    },
+                    "idKabkota": {
+                      "type": "string",
+                      "example": "3526"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "jl. coba"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/etle/56/delete": {
+        "delete": {
+          "tags": ["ETLE (ADMIN)"],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/poslantas": {
+        "get": {
+          "tags": ["POSLANTAS (ADMIN)"],
+          "summary": "list",
+          "description": "",
+          "operationId": "Getlist1",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "10"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": ["POSLANTAS (ADMIN)"],
+          "summary": "store",
+          "description": "",
+          "operationId": "Poststore2",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": ["idSatker", "nama", "alamat", "lat", "lng"],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21641"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "tes poslantas"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "alamat pos lantas"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.923823"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.89123"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/poslantas/1/detail": {
+        "get": {
+          "tags": ["POSLANTAS (ADMIN)"],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail2",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/poslantas/255/update": {
+        "post": {
+          "tags": ["POSLANTAS (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate2",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": ["idSatker", "nama", "alamat", "lat", "lng"],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21641"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "tes poslantas update"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "alamat pos lantas update"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.923823"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.89123"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/poslantas/255/delete": {
+        "delete": {
+          "tags": ["POSLANTAS (ADMIN)"],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete1",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/pospjr": {
+        "get": {
+          "tags": ["POSPJR (ADMIN)"],
+          "summary": "list",
+          "description": "",
+          "operationId": "Getlist2",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "10"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": ["POSPJR (ADMIN)"],
+          "summary": "store",
+          "description": "",
+          "operationId": "Poststore3",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": ["idSatker", "nama", "alamat", "lat", "lng"],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "tes pospjr"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "alamat pos pjr"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.923823"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.89123"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/pospjr/253/detail": {
+        "get": {
+          "tags": ["POSPJR (ADMIN)"],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail3",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/pospjr/257/update": {
+        "post": {
+          "tags": ["POSPJR (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate3",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": ["idSatker", "nama", "alamat", "lat", "lng"],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "tes pospjr update"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "alamat pos pjr update"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.923823"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.89123"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/poslantas/257/delete": {
+        "delete": {
+          "tags": ["POSPJR (ADMIN)"],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete2",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/lokasi-rawan": {
+        "get": {
+          "tags": ["LOKASI RAWAN / BLACK AND TROUBLE SPOT (ADMIN)"],
           "summary": "list all",
           "description": "",
           "operationId": "Getlistall",
@@ -2076,6 +3785,18 @@
               "schema": {
                 "type": "string"
               }
+            },
+            {
+              "name": "type",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "TROUBLE SPOT"
+              }
             }
           ],
           "responses": {
@@ -2097,12 +3818,10 @@
           ]
         },
         "post": {
-          "tags": [
-            "KENDARAAN"
-          ],
+          "tags": ["LOKASI RAWAN / BLACK AND TROUBLE SPOT (ADMIN)"],
           "summary": "store",
           "description": "",
-          "operationId": "Poststore",
+          "operationId": "Poststore4",
           "parameters": [
             {
               "name": "Content-Type",
@@ -2125,8 +3844,91 @@
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
               }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
             }
           ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "idSatker",
+                    "type",
+                    "namaJalan",
+                    "fungsiJalan",
+                    "lat",
+                    "lng",
+                    "jmlLaka",
+                    "jmlKorbanMd",
+                    "jmlKorbanLb",
+                    "durasiMacet",
+                    "jumlahKemacetan",
+                    "penyebab",
+                    "keterangan"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21678"
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "BLACK SPOT"
+                    },
+                    "namaJalan": {
+                      "type": "string",
+                      "example": "jl. tes coba"
+                    },
+                    "fungsiJalan": {
+                      "type": "string"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.939024705157214"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "112.60752439498903"
+                    },
+                    "jmlLaka": {
+                      "type": "string"
+                    },
+                    "jmlKorbanMd": {
+                      "type": "string"
+                    },
+                    "jmlKorbanLb": {
+                      "type": "string"
+                    },
+                    "durasiMacet": {
+                      "type": "string"
+                    },
+                    "jumlahKemacetan": {
+                      "type": "string"
+                    },
+                    "penyebab": {
+                      "type": "string"
+                    },
+                    "keterangan": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
           "responses": {
             "200": {
               "description": "",
@@ -2146,229 +3948,12 @@
           ]
         }
       },
-      "/kendaraan/1/detail": {
+      "/admin/lokasi-rawan/30/detail": {
         "get": {
-          "tags": [
-            "KENDARAAN"
-          ],
+          "tags": ["LOKASI RAWAN / BLACK AND TROUBLE SPOT (ADMIN)"],
           "summary": "detail",
           "description": "",
-          "operationId": "Getdetail",
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/kendaraan/60/update": {
-        "post": {
-          "tags": [
-            "KENDARAAN"
-          ],
-          "summary": "update",
-          "description": "",
-          "operationId": "Postupdate",
-          "parameters": [
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "multipart/form-data"
-              }
-            },
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/kendaraan/94/delete": {
-        "delete": {
-          "tags": [
-            "KENDARAAN"
-          ],
-          "summary": "delete",
-          "description": "",
-          "operationId": "Deletedelete",
-          "parameters": [
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "multipart/form-data"
-              }
-            },
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/lokasi-rawan": {
-        "get": {
-          "tags": [
-            "LOKASI RAWAN"
-          ],
-          "summary": "list all",
-          "description": "",
-          "operationId": "Getlistall1",
-          "parameters": [
-            {
-              "name": "User-Agent",
-              "in": "header",
-              "description": "",
-              "required": false,
-              "style": "simple",
-              "schema": {
-                "type": "string",
-                "example": "Insomnia/2023.5.6"
-              }
-            },
-            {
-              "name": "page",
-              "in": "query",
-              "description": "",
-              "required": false,
-              "style": "form",
-              "explode": true,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "limit",
-              "in": "query",
-              "description": "",
-              "required": false,
-              "style": "form",
-              "explode": true,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "search",
-              "in": "query",
-              "description": "",
-              "required": false,
-              "style": "form",
-              "explode": true,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "",
-              "headers": {},
-              "content": {
-                "text/plain": {
-                  "schema": {}
-                }
-              }
-            }
-          },
-          "deprecated": false,
-          "security": [
-            {
-              "bearer": []
-            }
-          ]
-        }
-      },
-      "/lokasi-rawan/30/detail": {
-        "get": {
-          "tags": [
-            "LOKASI RAWAN"
-          ],
-          "summary": "detail",
-          "description": "",
-          "operationId": "Getdetail1",
+          "operationId": "Getdetail4",
           "parameters": [
             {
               "name": "User-Agent",
@@ -2412,14 +3997,144 @@
           ]
         }
       },
-      "/lokasi-rawan/30/delete": {
-        "delete": {
-          "tags": [
-            "LOKASI RAWAN"
+      "/admin/lokasi-rawan/119/update": {
+        "post": {
+          "tags": ["LOKASI RAWAN / BLACK AND TROUBLE SPOT (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate4",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
           ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "idSatker",
+                    "type",
+                    "namaJalan",
+                    "fungsiJalan",
+                    "lat",
+                    "lng",
+                    "jmlLaka",
+                    "jmlKorbanMd",
+                    "jmlKorbanLb",
+                    "durasiMacet",
+                    "jumlahKemacetan",
+                    "penyebab",
+                    "keterangan"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21678"
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "BLACK SPOT"
+                    },
+                    "namaJalan": {
+                      "type": "string",
+                      "example": "jl. tes coba"
+                    },
+                    "fungsiJalan": {
+                      "type": "string"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.939024705157214"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "112.60752439498903"
+                    },
+                    "jmlLaka": {
+                      "type": "string"
+                    },
+                    "jmlKorbanMd": {
+                      "type": "string"
+                    },
+                    "jmlKorbanLb": {
+                      "type": "string"
+                    },
+                    "durasiMacet": {
+                      "type": "string"
+                    },
+                    "jumlahKemacetan": {
+                      "type": "string"
+                    },
+                    "penyebab": {
+                      "type": "string"
+                    },
+                    "keterangan": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/lokasi-rawan/119/delete": {
+        "delete": {
+          "tags": ["LOKASI RAWAN / BLACK AND TROUBLE SPOT (ADMIN)"],
           "summary": "delete",
           "description": "",
-          "operationId": "Deletedelete1",
+          "operationId": "Deletedelete3",
           "parameters": [
             {
               "name": "User-Agent",
@@ -2430,6 +4145,707 @@
               "schema": {
                 "type": "string",
                 "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/kendaraan": {
+        "get": {
+          "tags": ["KENDARAAN (ADMIN)"],
+          "summary": "list",
+          "description": "",
+          "operationId": "Getlist3",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "10"
+              }
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "created_at:desc"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": ["KENDARAAN (ADMIN)"],
+          "summary": "store",
+          "description": "",
+          "operationId": "Poststore5",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "idSatker",
+                    "imeiGps",
+                    "nama",
+                    "nopol",
+                    "jenisKendaraan",
+                    "tahun"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21609"
+                    },
+                    "imeiGps": {
+                      "type": "string",
+                      "example": "354674542223"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "kendaraan patroli 1"
+                    },
+                    "nopol": {
+                      "type": "string",
+                      "example": "X123AB"
+                    },
+                    "jenisKendaraan": {
+                      "type": "string",
+                      "example": "mobil"
+                    },
+                    "tahun": {
+                      "type": "string",
+                      "example": "2024"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/kendaraan/1/detail": {
+        "get": {
+          "tags": ["KENDARAAN (ADMIN)"],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail5",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/kendaraan/44/update": {
+        "post": {
+          "tags": ["KENDARAAN (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate5",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "idSatker",
+                    "imeiGps",
+                    "nama",
+                    "nopol",
+                    "jenisKendaraan",
+                    "tahun"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21609"
+                    },
+                    "imeiGps": {
+                      "type": "string",
+                      "example": "354674542223"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "kendaraan patroli 1"
+                    },
+                    "nopol": {
+                      "type": "string",
+                      "example": "X123AB"
+                    },
+                    "jenisKendaraan": {
+                      "type": "string",
+                      "example": "mobil"
+                    },
+                    "tahun": {
+                      "type": "string",
+                      "example": "2024"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/kendaraan/44/delete": {
+        "delete": {
+          "tags": ["KENDARAAN (ADMIN)"],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete4",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/titik-gatur": {
+        "get": {
+          "tags": ["TITIK GATUR (ADMIN)"],
+          "summary": "list",
+          "description": "",
+          "operationId": "Getlist4",
+          "parameters": [
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": ["TITIK GATUR (ADMIN)"],
+          "summary": "store",
+          "description": "",
+          "operationId": "Poststore6",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "insomnia/8.5.1"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "idSatker",
+                    "nama",
+                    "lat",
+                    "lng",
+                    "radiusInMeter",
+                    "alamat"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21609"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "Titik Gatur 4"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.145498"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.877405"
+                    },
+                    "radiusInMeter": {
+                      "type": "string",
+                      "example": "200"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "Jl. KH. Mansyur No. 9, Ledok Wetan, Bojonegoro, Jl. Kh. Mansyur, Ledok Kulon Tiga, Ledok Wetan, Kec. Bojonegoro, Kabupaten Bojonegoro, Jawa Timur 62112"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/titik-gatur/1/detail": {
+        "get": {
+          "tags": ["TITIK GATUR (ADMIN)"],
+          "summary": "detail",
+          "description": "",
+          "operationId": "Getdetail6",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "insomnia/8.5.1"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/titik-gatur/6/update": {
+        "post": {
+          "tags": ["TITIK GATUR (ADMIN)"],
+          "summary": "update",
+          "description": "",
+          "operationId": "Postupdate6",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "insomnia/8.5.1"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "idSatker",
+                    "nama",
+                    "lat",
+                    "lng",
+                    "radiusInMeter",
+                    "alamat"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "idSatker": {
+                      "type": "string",
+                      "example": "21609"
+                    },
+                    "nama": {
+                      "type": "string",
+                      "example": "Titik Gatur 6 update"
+                    },
+                    "lat": {
+                      "type": "string",
+                      "example": "-7.145498"
+                    },
+                    "lng": {
+                      "type": "string",
+                      "example": "111.877405"
+                    },
+                    "radiusInMeter": {
+                      "type": "string",
+                      "example": "200"
+                    },
+                    "alamat": {
+                      "type": "string",
+                      "example": "Jl. KH. Mansyur No. 9, Ledok Wetan, Bojonegoro, Jl. Kh. Mansyur, Ledok Kulon Tiga, Ledok Wetan, Kec. Bojonegoro, Kabupaten Bojonegoro, Jawa Timur 62112"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/titik-gatur/6/delete": {
+        "delete": {
+          "tags": ["TITIK GATUR (ADMIN)"],
+          "summary": "delete",
+          "description": "",
+          "operationId": "Deletedelete5",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "insomnia/8.5.1"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
               }
             }
           ],
@@ -2472,23 +4888,43 @@
         "description": ""
       },
       {
-        "name": "LOKASI MAP",
+        "name": "LOKASI MAP (MONIT)",
         "description": ""
       },
       {
-        "name": "SATKER",
+        "name": "SATKER (ADMIN)",
         "description": ""
       },
       {
-        "name": "CCTV",
+        "name": "PERSONIL (ADMIN)",
         "description": ""
       },
       {
-        "name": "KENDARAAN",
+        "name": "CCTV (ADMIN)",
         "description": ""
       },
       {
-        "name": "LOKASI RAWAN",
+        "name": "ETLE (ADMIN)",
+        "description": ""
+      },
+      {
+        "name": "POSLANTAS (ADMIN)",
+        "description": ""
+      },
+      {
+        "name": "POSPJR (ADMIN)",
+        "description": ""
+      },
+      {
+        "name": "LOKASI RAWAN / BLACK AND TROUBLE SPOT (ADMIN)",
+        "description": ""
+      },
+      {
+        "name": "KENDARAAN (ADMIN)",
+        "description": ""
+      },
+      {
+        "name": "TITIK GATUR (ADMIN)",
         "description": ""
       }
     ]
