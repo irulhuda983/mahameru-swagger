@@ -4475,7 +4475,7 @@
           ]
         }
       },
-      "/kendaraan/44/delete": {
+      "/admin/kendaraan/44/delete": {
         "delete": {
           "tags": ["KENDARAAN (ADMIN)"],
           "summary": "delete",
@@ -4493,6 +4493,333 @@
                 "example": "multipart/form-data"
               }
             },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/jabatan": {
+        "get": {
+          "tags": [
+            "JABATAN (ADMIN)"
+          ],
+          "summary": "list",
+          "description": "",
+          "operationId": "list",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string",
+                "example": "10"
+              }
+            },
+            {
+              "name": "search",
+              "in": "query",
+              "description": "",
+              "required": false,
+              "style": "form",
+              "explode": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        },
+        "post": {
+          "tags": [
+            "JABATAN (ADMIN)"
+          ],
+          "summary": "store",
+          "description": "",
+          "operationId": "store",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "nama"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "nama": {
+                      "type": "string",
+                      "example": "test jabatan"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/jabatan/1/detail": {
+        "get": {
+          "tags": [
+            "JABATAN (ADMIN)"
+          ],
+          "summary": "detail",
+          "description": "",
+          "operationId": "detail",
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/jabatan/1/update": {
+        "post": {
+          "tags": [
+            "JABATAN (ADMIN)"
+          ],
+          "summary": "update",
+          "description": "",
+          "operationId": "update",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "multipart/form-data"
+              }
+            },
+            {
+              "name": "User-Agent",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "Insomnia/2023.5.6"
+              }
+            },
+            {
+              "name": "Accept",
+              "in": "header",
+              "description": "",
+              "required": false,
+              "style": "simple",
+              "schema": {
+                "type": "string",
+                "example": "application/json"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "encoding": {},
+                "schema": {
+                  "required": [
+                    "nama"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "nama": {
+                      "type": "string",
+                      "example": "update list"
+                    }
+                  }
+                }
+              }
+            },
+            "required": false
+          },
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {},
+              "content": {
+                "text/plain": {
+                  "schema": {}
+                }
+              }
+            }
+          },
+          "deprecated": false,
+          "security": [
+            {
+              "bearer": []
+            }
+          ]
+        }
+      },
+      "/admin/jabatan/1/delete": {
+        "delete": {
+          "tags": [
+            "JABATAN (ADMIN)"
+          ],
+          "summary": "delete",
+          "description": "",
+          "operationId": "delete",
+          "parameters": [
             {
               "name": "User-Agent",
               "in": "header",
@@ -5295,6 +5622,10 @@
       },
       {
         "name": "KENDARAAN (ADMIN)",
+        "description": ""
+      },
+      {
+        "name": "JABATAN (ADMIN)",
         "description": ""
       },
       {
